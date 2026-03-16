@@ -1,0 +1,4 @@
+fastapi
+uvicorn[standard]
+nova-act
+python-dotenv
