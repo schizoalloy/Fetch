@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Nova Act Supplier Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1>Nova Act Supplier Explorer</h1>
+        <span class="subtitle">UI automation powered supplier discovery</span>
+      </header>
+      <main class="layout">
+        <section class="panel panel-left">
+          <h2>History</h2>
+          <ul id="history-list" class="history-list"></ul>
+        </section>
+
+        <section class="panel panel-center">
+          <h2>Search</h2>
+          <div class="search-controls">
+            <input
+              id="search-input"
+              type="text"
+              placeholder="Enter product name, e.g. 'stainless steel water bottle'"
+            />
+            <button id="search-button">Search</button>
+          </div>
+
+          <div id="status" class="status"></div>
+
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th data-sort="name">Supplier</th>
+                <th data-sort="source">Source</th>
+                <th data-sort="estimated_price">Price</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </section>
+
+        <section class="panel panel-right">
+          <h2>Modes</h2>
+          <div class="modes">
+            <label>
+              <input type="radio" name="mode" value="broad_web" checked />
+              <span class="mode-title">Broad Web Search</span>
+              <span class="mode-desc">Search general web search engines.</span>
+            </label>
+            <label>
+              <input type="radio" name="mode" value="marketplace" />
+              <span class="mode-title">Marketplaces</span>
+              <span class="mode-desc">Focus on e-commerce marketplaces.</span>
+            </label>
+            <label>
+              <input type="radio" name="mode" value="b2b" />
+              <span class="mode-title">B2B Directories</span>
+              <span class="mode-desc">Look up B2B supplier directories.</span>
+            </label>
+          </div>
+
+          <div class="legend">
+            <h3>Demo actions</h3>
+            <ul>
+              <li><strong>Buy Now</strong> – simulates a checkout flow.</li>
+              <li><strong>Inquire</strong> – simulates sending a message.</li>
+              <li><strong>Connect to Shopify</strong> – simulates integration.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <div id="toast" class="toast hidden"></div>
+    </div>
+
+    <script src="./main.js" type="module"></script>
+  </body>
+  </html>
+
